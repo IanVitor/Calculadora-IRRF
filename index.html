@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/logo_img.svg" type="image/x-icon">
+  <title>Calculadora IRRF</title>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header_logo">
+      <img src="assets/logo_img.svg" alt="logo">
+    </div>
+    <nav>
+      <ul class="nav_itens">
+        <li><a class="header_links" href="#">Home</a></li>
+        <li><a class="header_links" href="#about">Sobre</a></li>
+        <li><a class="header_links" href="#calc">Calcular</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content_container">
+      <div class="title_container">
+        <h1>Calcule seu<br> IRRF Agora!</h1>
+        <a href="#calc"><button id="header_btn">Calcular</button></a>
+      </div>
+      <div class="content_img">
+        <img src="assets/couple_img.svg" alt="Imagem casal com dinheiro">
+      </div>
+    </section>
+  </main>
+
+  <article id="about" class="about_container">
+
+    <section class="about_wrapper">
+      <div class="sub_title">
+        <h2>O que é ?</h2>
+      </div>
+      <p>
+        O Imposto de Renda Retido na Fonte (IRRF), é uma antecipação do Imposto de Renda devido pelo contribuinte ao final do ano, quando é feita a declaração de ajuste anual. Onde os valores incidem sobre os rendimentos recebidos pelos contribuintes.
+      </p>  
+      <p>
+        Esse valor retido na fonte é calculado de acordo com uma tabela progressiva, que leva em consideração o valor do rendimento e as alíquotas estabelecidas pela Receita Federal, com o objetivo de garantir a arrecadação antecipada do imposto e promover a distribuição da carga tributária ao longo do ano.
+      </p>
+    </section>
+    <section class="about_wrapper dark">
+      <div class="sub_title">
+        <h2>Como calcular ?</h2>
+      </div>
+      <ol class="about_list">
+        <li>Primeiro devemos subtrair a quantia destinada ao INSS, por exemplo, um salário bruto de R$ 3000,00 com 1 dependente.<br>R$ 3000 - 12% = R$ 2640.</li>
+        <li>Em seguida, devemos subtrair da base de cálculo a quantia destinada a cada dependente.<br>R$ 2640,00 - R$ 189,59 = R$ 2450,41.</li>
+        <li>Por fim, descontamos da alíquota, a dedução correspondente.<br>R$ 2450,41 x 7,5% = R$ 183,78<br>R$ 183,78 - R$ 158,40 = R$ 25,38</li>
+      </ol>
+    </section>
+    <section class="about_wrapper">
+      <div class="sub_title">
+        <h2>Tabela de cálculos:</h2>
+      </div>
+      <div class="table_container">
+        <table width="100%">
+          <tr>
+            <td><strong>Base de cálculo</strong></td>
+            <td><strong>Alíquota</strong></td>
+            <td><strong>Dedução</strong></td>
+          </tr>
+          <tr>
+            <td>de 0,00 até 2.112,00</td>
+            <td>isento</td>
+            <td>0,00</td>
+          </tr>
+          <tr>
+            <td>de 2.112,01 até 2.826,65</td>
+            <td>7,50%</td>
+            <td>158,40</td>
+          </tr>
+          <tr>
+            <td>de 2.826,66 até 3.751,05</td>
+            <td>15,00%</td>
+            <td>370,40</td>
+          </tr>
+          <tr>
+            <td>de 3.751,06 até 4.664,68</td>
+            <td>22,50%</td>
+            <td>651,73</td>
+          </tr>
+          <tr>
+            <td>a partir de 4.664,68</td>
+            <td>27,50%</td>
+            <td>884,96</td>
+          </tr>
+          <tr>
+            <td colspan="3" align="center">Valor de dependentes:  189,59</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+  </article>
+
+  <section id="calc" class="calc_container">
+    <div class="sub_title">
+      <h2>Calculadora</h2>
+    </div>
+    <form class="calc_form">
+      <div class="salario input">
+        <label for="salario">Salário bruto</label>
+        <div class="input_div">
+          <i><img src="assets/money.svg" alt=""></i>
+          <input id="salario_input" step="any" type="number" placeholder="R$ 00,00">
+        </div>
+      </div>
+      <div class="dependentes input">
+        <label for="dependentes">N° dependentes</label>
+        <div class="input_div">
+          <i><img src="assets/users.svg" alt=""></i>
+          <input id="dependentes_input" type="number" placeholder="0">
+        </div>
+      </div>
+      <button class="btn_calc" type="submit">Calcular</button>
+    </form>
+    <section class="result none">
+      <table width="100%" class="result_table">
+        <tr class="table_head">
+          <td>Ref</td>
+          <td>Valor</td>
+        </tr>
+        <tr>
+          <td id="ref">7,5%</td>
+          <td id="valor">25,38</td>
+        </tr>
+      </table>
+    </section>
+  </section>
+
+  <footer>
+    <div class="footer_content">
+      <img src="assets/logo_img.svg" alt="logo">
+      <article>
+        Desvende o mistério dos cálculos fiscais com nossa calculadora de IRRF: simples, precisa e eficiente! 
+      </article>
+    </div>
+    <p>&copy; 2023 <a href="https://portfolio-v2-sable-seven.vercel.app/" target="_blank">Ian Vitor</a></p>
+  </footer>
+
+  <script src="scripts/script.js"></script>
+</body>
+</html>
